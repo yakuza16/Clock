@@ -1,0 +1,84 @@
+*,
+*::after,
+**::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #d3d3d3;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.wrapper {
+  border: 2px solid #000;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 0 auto;
+  width: 70wv;
+  text-align: center;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.wrapper .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  margin-top: 20px;
+  border: 1px solid red;
+}
+
+.wrapper .container .container-title {
+  font-size: 30px;
+}
+
+.wrapper .container .clock-wrapper {
+  padding: 20px;
+  height: auto;
+  border: 2px solid green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper .container .clock-wrapper__clock {
+  margin: 30px;
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+}
+
+.wrapper .container .switcher {
+  margin: 30px 0;
+}
+
+.wrapper .container .switcher__button {
+  padding: 8px 15px;
+}
+/*# sourceMappingURL=style.css.map */
