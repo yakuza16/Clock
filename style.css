@@ -81,26 +81,30 @@ body {
   left: 50%;
   -webkit-transform-origin: top left;
           transform-origin: top left;
-  -webkit-transform: rotate(-180deg);
-          transform: rotate(-180deg);
 }
 
 .wrapper .container .clock-wrapper .clock__hours-hand {
   width: 10px;
   height: 100px;
   background-color: red;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .wrapper .container .clock-wrapper .clock__minutes-hand {
   width: 7px;
   height: 135px;
   background-color: green;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .wrapper .container .clock-wrapper .clock__seconds-hand {
   width: 3px;
   height: 140px;
   background-color: blue;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .wrapper .container .clock-wrapper .clock__digit {
@@ -111,9 +115,29 @@ body {
   font-size: 25px;
 }
 
+.wrapper .container .clock-wrapper .clock__digit:nth-child(1) {
+  top: 15%;
+  right: 22%;
+}
+
+.wrapper .container .clock-wrapper .clock__digit:nth-child(2) {
+  top: 30%;
+  right: 9%;
+}
+
 .wrapper .container .clock-wrapper .clock__digit:nth-child(3) {
   top: 50%;
   left: 95%;
+}
+
+.wrapper .container .clock-wrapper .clock__digit:nth-child(4) {
+  top: 70%;
+  right: 9%;
+}
+
+.wrapper .container .clock-wrapper .clock__digit:nth-child(5) {
+  top: 85%;
+  right: 22%;
 }
 
 .wrapper .container .clock-wrapper .clock__digit:nth-child(6) {
@@ -121,9 +145,29 @@ body {
   left: 50%;
 }
 
+.wrapper .container .clock-wrapper .clock__digit:nth-child(7) {
+  top: 85%;
+  left: 22%;
+}
+
+.wrapper .container .clock-wrapper .clock__digit:nth-child(8) {
+  top: 70%;
+  left: 9%;
+}
+
 .wrapper .container .clock-wrapper .clock__digit:nth-child(9) {
   top: 50%;
   left: 5%;
+}
+
+.wrapper .container .clock-wrapper .clock__digit:nth-child(10) {
+  top: 30%;
+  left: 9%;
+}
+
+.wrapper .container .clock-wrapper .clock__digit:nth-child(11) {
+  top: 15%;
+  left: 22%;
 }
 
 .wrapper .container .clock-wrapper .clock__digit:nth-child(12) {
