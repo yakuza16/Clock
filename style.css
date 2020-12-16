@@ -79,8 +79,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform-origin: top left;
-          transform-origin: top left;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  border-radius: 50%;
+  border: 1px solid black;
 }
 
 .wrapper .container .clock-wrapper .clock__hours-hand {

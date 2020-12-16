@@ -26,9 +26,9 @@
             <span class="clock__digit">10</span>
             <span class="clock__digit">11</span>
             <span class="clock__digit">12</span>
-            <span class="hand clock__hours-hand"></span>
-            <span class="hand clock__minutes-hand"></span>
-            <span class="hand clock__seconds-hand"></span>
+            <span id="hours" class="hand clock__hours-hand"></span>
+            <span id="minutes" class="hand clock__minutes-hand"></span>
+            <span id="seconds" class="hand clock__seconds-hand"></span>
           </div>
         </div>
         <div class="switcher">
@@ -37,6 +37,9 @@
       </section>
     </div>
 
-    <script src=".index.js"></script>
+    <script src="./Clock.js"></script>
+    <script>
+      const clock = new Clock();
+    </script>
   </body>
 </html>

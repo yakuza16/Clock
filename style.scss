@@ -57,7 +57,9 @@ body {
           position: absolute;
           top: 50%;
           left: 50%;
-          transform-origin: top left;
+          transform-origin: top;
+          border-radius: 50%;
+          border: 1px solid black;
         }
 
         &__hours-hand {
