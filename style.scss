@@ -58,27 +58,76 @@ body {
           top: 50%;
           left: 50%;
           transform-origin: top left;
+          transform: rotate(-180deg);
         }
 
         &__hours-hand {
           width: 10px;
           height: 100px;
-          transform: rotate(-180deg);
           background-color: red;
         }
 
         &__minutes-hand {
           width: 7px;
           height: 135px;
-          transform: rotate(-150deg);
           background-color: green;
         }
 
         &__seconds-hand {
           width: 3px;
           height: 140px;
-          transform: rotate(-110deg);
           background-color: blue;
+        }
+
+        &__digit {
+          display: block;
+          position: absolute;
+          transform: translate(-50%, -50%);
+          font-size: 25px;
+        }
+
+        &__digit:nth-child(1) {
+        }
+
+        &__digit:nth-child(2) {
+        }
+
+        &__digit:nth-child(3) {
+          top: 50%;
+          left: 95%;
+        }
+
+        &__digit:nth-child(4) {
+        }
+
+        &__digit:nth-child(5) {
+        }
+
+        &__digit:nth-child(6) {
+          top: 95%;
+          left: 50%;
+        }
+
+        &__digit:nth-child(7) {
+        }
+
+        &__digit:nth-child(8) {
+        }
+
+        &__digit:nth-child(9) {
+          top: 50%;
+          left: 5%;
+        }
+
+        &__digit:nth-child(10) {
+        }
+
+        &__digit:nth-child(11) {
+        }
+
+        &__digit:nth-child(12) {
+          top: 5%;
+          left: 50%;
         }
       }
     }
