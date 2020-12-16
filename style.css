@@ -65,13 +65,46 @@ body {
           justify-content: center;
 }
 
-.wrapper .container .clock-wrapper__clock {
+.wrapper .container .clock-wrapper .clock {
   margin: 30px;
   width: 400px;
   height: 400px;
   background-color: #fff;
   border-radius: 50%;
   position: relative;
+}
+
+.wrapper .container .clock-wrapper .clock .hand {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.wrapper .container .clock-wrapper .clock__hours-hand {
+  width: 10px;
+  height: 100px;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  background-color: red;
+}
+
+.wrapper .container .clock-wrapper .clock__minutes-hand {
+  width: 7px;
+  height: 135px;
+  -webkit-transform: rotate(-150deg);
+          transform: rotate(-150deg);
+  background-color: green;
+}
+
+.wrapper .container .clock-wrapper .clock__seconds-hand {
+  width: 3px;
+  height: 140px;
+  -webkit-transform: rotate(-110deg);
+          transform: rotate(-110deg);
+  background-color: blue;
 }
 
 .wrapper .container .switcher {

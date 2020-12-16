@@ -44,13 +44,42 @@ body {
       display: flex;
       justify-content: center;
 
-      &__clock {
+      .clock {
         margin: 30px;
         width: 400px;
         height: 400px;
         background-color: #fff;
         border-radius: 50%;
         position: relative;
+
+        .hand {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform-origin: top left;
+        }
+
+        &__hours-hand {
+          width: 10px;
+          height: 100px;
+          transform: rotate(-180deg);
+          background-color: red;
+        }
+
+        &__minutes-hand {
+          width: 7px;
+          height: 135px;
+          transform: rotate(-150deg);
+          background-color: green;
+        }
+
+        &__seconds-hand {
+          width: 3px;
+          height: 140px;
+          transform: rotate(-110deg);
+          background-color: blue;
+        }
       }
     }
 
