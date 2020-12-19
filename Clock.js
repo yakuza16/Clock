@@ -29,7 +29,7 @@ class Clock {
     }deg ))`;
 
     this.hoursHand.style.transform = `rotate(calc(180deg + ${
-      this.currentHours * 30 + this.currentMinutes / 6
+      this.currentHours * 30 + this.currentMinutes / 2
     }deg ))`;
   }
 }
