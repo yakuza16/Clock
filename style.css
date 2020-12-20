@@ -118,8 +118,8 @@ body {
 }
 
 .wrapper .container .clock-wrapper .clock__digit:nth-child(1) {
-  top: 15%;
-  right: 22%;
+  top: 13%;
+  right: 27%;
 }
 
 .wrapper .container .clock-wrapper .clock__digit:nth-child(2) {
@@ -138,8 +138,8 @@ body {
 }
 
 .wrapper .container .clock-wrapper .clock__digit:nth-child(5) {
-  top: 85%;
-  right: 22%;
+  top: 87%;
+  right: 25%;
 }
 
 .wrapper .container .clock-wrapper .clock__digit:nth-child(6) {
@@ -148,8 +148,8 @@ body {
 }
 
 .wrapper .container .clock-wrapper .clock__digit:nth-child(7) {
-  top: 85%;
-  left: 22%;
+  top: 87%;
+  left: 27%;
 }
 
 .wrapper .container .clock-wrapper .clock__digit:nth-child(8) {
@@ -168,8 +168,8 @@ body {
 }
 
 .wrapper .container .clock-wrapper .clock__digit:nth-child(11) {
-  top: 15%;
-  left: 22%;
+  top: 13%;
+  left: 27%;
 }
 
 .wrapper .container .clock-wrapper .clock__digit:nth-child(12) {
@@ -182,6 +182,6 @@ body {
 }
 
 .wrapper .container .switcher__button {
-  padding: 8px 15px;
+  padding: 8px 18px;
 }
 /*# sourceMappingURL=style.css.map */
