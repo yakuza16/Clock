@@ -72,6 +72,14 @@ body {
   background-color: #fff;
   border-radius: 50%;
   position: relative;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.wrapper .container .clock-wrapper .clock--hidden {
+  opacity: 0;
+  -webkit-animation: hideClock 0.5s ease-in-out 1;
+          animation: hideClock 0.5s ease-in-out 1;
 }
 
 .wrapper .container .clock-wrapper .clock .hand {
@@ -183,5 +191,35 @@ body {
 
 .wrapper .container .switcher__button {
   padding: 8px 18px;
+}
+
+@-webkit-keyframes hideClock {
+  0% {
+    -webkit-transform: opacity(1);
+            transform: opacity(1);
+  }
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes hideClock {
+  0% {
+    -webkit-transform: opacity(1);
+            transform: opacity(1);
+  }
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
 }
 /*# sourceMappingURL=style.css.map */
