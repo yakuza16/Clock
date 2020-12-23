@@ -26,7 +26,7 @@ class Clock {
       clockElementsIds.clockDigitalHours
     );
     this.clockDigitalMinutes = document.getElementById(
-      clockElementsIds.clockDigitaMinutes
+      clockElementsIds.clockDigitalMinutes
     );
     this.clockDigitalSeconds = document.getElementById(
       clockElementsIds.clockDigitalSeconds
@@ -49,9 +49,7 @@ class Clock {
       this.clock.classList.remove("clock--hidden");
       this.clockDigital.classList.remove("clock-digital--active");
     }
-
     this.isDigitalClockVisible = !this.isDigitalClockVisible;
-    console.log(this.isDigitalClockVisible);
   }
 
   getActualTime() {
@@ -75,21 +73,36 @@ class Clock {
     }deg ))`;
   }
 
+  runDigitalClock() {
+    this.clockDigitalHours.textContent =
+      this.currentHours < 10
+        ? `0${this.currentHours} :`
+        : `${this.currentHours} :`;
+    this.clockDigitalMinutes.textContent =
+      this.currentMinutes < 10
+        ? `0${this.currentMinutes} :`
+        : `${this.currentMinutes} :`;
+    this.clockDigitalSeconds.textContent =
+      this.currentSeconds < 10
+        ? `0${this.currentSeconds}`
+        : this.currentSeconds;
+  }
+
   startTime() {
     setInterval(() => {
-      if (this.currentSeconds >= 60) {
+      if (this.currentSeconds === 60) {
         this.currentSeconds = 0;
         this.currentMinutes++;
         this.minutesHand.style.transform = `rotate(calc(180deg + ${
           this.currentMinutes * 6
         }deg ))`;
-        if (this.currentMinutes >= 60) {
+        if (this.currentMinutes === 60) {
           this.currentMinutes = 0;
           this.currentHours++;
           this.hoursHand.style.transform = `rotate(calc(180deg + ${
             this.currentHours * 30 + this.currentMinutes / 2
           }deg ))`;
-          if (this.currentHours >= 12) {
+          if (this.currentHours === 12) {
             this.currentHours = 0;
             this.hoursHand.style.transform = `rotate(calc(180deg + ${
               this.currentHours * 30 + this.currentMinutes / 2
@@ -98,6 +111,7 @@ class Clock {
         }
       }
       this.currentSeconds++;
+      this.runDigitalClock();
       this.secondsHand.style.transform = `rotate(calc(180deg + ${
         this.currentSeconds * 6
       }deg ))`;
