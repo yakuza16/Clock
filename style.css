@@ -54,6 +54,7 @@ body {
 }
 
 .wrapper .container .clock-wrapper {
+  position: relative;
   padding: 20px;
   height: auto;
   border: 2px solid green;
@@ -65,6 +66,23 @@ body {
           justify-content: center;
 }
 
+.wrapper .container .clock-wrapper .clock-digital {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.wrapper .container .clock-wrapper .clock-digital--active {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
 .wrapper .container .clock-wrapper .clock {
   margin: 30px;
   width: 400px;
@@ -74,6 +92,8 @@ body {
   position: relative;
   -webkit-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
+  -webkit-animation: showClock 0.5s ease-in-out 1;
+          animation: showClock 0.5s ease-in-out 1;
 }
 
 .wrapper .container .clock-wrapper .clock--hidden {
@@ -195,12 +215,8 @@ body {
 
 @-webkit-keyframes hideClock {
   0% {
-    -webkit-transform: opacity(1);
-            transform: opacity(1);
-  }
-  50% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
     -webkit-transform: scale(0);
@@ -210,16 +226,38 @@ body {
 
 @keyframes hideClock {
   0% {
-    -webkit-transform: opacity(1);
-            transform: opacity(1);
-  }
-  50% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
     -webkit-transform: scale(0);
             transform: scale(0);
+  }
+}
+
+@-webkit-keyframes showClock {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes showClock {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -5,6 +5,10 @@ class Clock {
       minutesId: "minutes",
       secondsId: "seconds",
       clock: "clock",
+      clockDigital: "clock-digital",
+      clockDigitalHours: "digital-hours",
+      clockDigitalMinutes: "digital-minutes",
+      clockDigitalSeconds: "digital-seconds",
       switcher: "switch",
     };
 
@@ -17,6 +21,17 @@ class Clock {
     this.minutesHand = document.getElementById(clockElementsIds.minutesId);
     this.secondsHand = document.getElementById(clockElementsIds.secondsId);
     this.clock = document.getElementById(clockElementsIds.clock);
+    this.clockDigital = document.getElementById(clockElementsIds.clockDigital);
+    this.clockDigitalHours = document.getElementById(
+      clockElementsIds.clockDigitalHours
+    );
+    this.clockDigitalMinutes = document.getElementById(
+      clockElementsIds.clockDigitaMinutes
+    );
+    this.clockDigitalSeconds = document.getElementById(
+      clockElementsIds.clockDigitalSeconds
+    );
+
     this.switcher = document
       .getElementById(clockElementsIds.switcher)
       .addEventListener("click", () => this.switchClock());
@@ -29,6 +44,10 @@ class Clock {
   switchClock() {
     if (!this.isDigitalClockVisible) {
       this.clock.classList.add("clock--hidden");
+      this.clockDigital.classList.add("clock-digital--active");
+    } else {
+      this.clock.classList.remove("clock--hidden");
+      this.clockDigital.classList.remove("clock-digital--active");
     }
 
     this.isDigitalClockVisible = !this.isDigitalClockVisible;
