@@ -8,16 +8,22 @@
 }
 
 body {
-  background-color: #d3d3d3;
+  background-color: #4b4545;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   font-family: inherit;
+  color: gray;
 }
 
 .wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border: 2px solid #000;
-  width: 80%;
+  width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,8 +33,7 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin: 0 auto;
-  width: 70wv;
+  margin-top: 50px;
   text-align: center;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
@@ -46,7 +51,6 @@ body {
           align-items: center;
   justify-items: center;
   margin-top: 20px;
-  border: 1px solid red;
 }
 
 .wrapper .container .container-title {
@@ -57,7 +61,6 @@ body {
   position: relative;
   padding: 20px;
   height: auto;
-  border: 2px solid green;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,6 +146,11 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-size: 25px;
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .wrapper .container .clock-wrapper .clock__digit:nth-child(1) {
@@ -211,6 +219,7 @@ body {
 
 .wrapper .container .switcher__button {
   padding: 8px 18px;
+  cursor: pointer;
 }
 
 @-webkit-keyframes hideClock {

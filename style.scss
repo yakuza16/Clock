@@ -1,3 +1,6 @@
+$main-theme: #4b4545;
+$font-color: gray;
+
 *,
 *::after,
 **::before {
@@ -7,21 +10,25 @@
 }
 
 body {
-  background-color: #d3d3d3;
+  background-color: $main-theme;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   font-family: inherit;
+  color: $font-color;
 }
 
 .wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border: 2px solid #000;
-  width: 80%;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin: 0 auto;
-  width: 70wv;
+  margin-top: 50px;
   text-align: center;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
@@ -31,7 +38,6 @@ body {
     align-items: center;
     justify-items: center;
     margin-top: 20px;
-    border: 1px solid red;
 
     .container-title {
       font-size: 30px;
@@ -41,7 +47,6 @@ body {
       position: relative;
       padding: 20px;
       height: auto;
-      border: 2px solid green;
       display: flex;
       justify-content: center;
 
@@ -111,6 +116,8 @@ body {
           position: absolute;
           transform: translate(-50%, -50%);
           font-size: 25px;
+          font-weight: bold;
+          user-select: none;
         }
 
         &__digit:nth-child(1) {
@@ -180,6 +187,7 @@ body {
 
       &__button {
         padding: 8px 18px;
+        cursor: pointer;
       }
     }
   }
