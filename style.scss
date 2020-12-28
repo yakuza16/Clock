@@ -57,6 +57,9 @@ body {
         transform: translate(-50%, -50%);
         opacity: 0;
         transition: opacity 1s;
+        font-size: 45px;
+        font-weight: bold;
+        -webkit-box-reflect: below 0 linear-gradient(transparent, blue);
 
         &--active {
           top: 50%;
