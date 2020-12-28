@@ -31,10 +31,9 @@ class Clock {
     this.clockDigitalSeconds = document.getElementById(
       clockElementsIds.clockDigitalSeconds
     );
-
-    this.switcher = document
-      .getElementById(clockElementsIds.switcher)
-      .addEventListener("click", () => this.switchClock());
+    this.switcher = document.getElementById(clockElementsIds.switcher);
+    this.switcher.textContent = "Switch to digital clock".toUpperCase();
+    this.switcher.addEventListener("click", () => this.switchClock());
 
     this.getActualTime();
     this.initializeClock();
@@ -43,9 +42,11 @@ class Clock {
 
   switchClock() {
     if (!this.isDigitalClockVisible) {
+      this.switcher.textContent = "Switch to wall clock".toUpperCase();
       this.clock.classList.add("clock--hidden");
       this.clockDigital.classList.add("clock-digital--active");
     } else {
+      this.switcher.textContent = "Switch to digital clock".toUpperCase();
       this.clock.classList.remove("clock--hidden");
       this.clockDigital.classList.remove("clock-digital--active");
     }
