@@ -35,7 +35,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 50px;
   text-align: center;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   cursor: grab;
@@ -207,6 +206,15 @@ body {
         font-size: 20px;
         border: none;
         width: 100%;
+
+        &:hover {
+          background-color: $font-color;
+          color: $main-theme;
+        }
+
+        &:focus {
+          outline: solid $main-theme;
+        }
       }
     }
   }

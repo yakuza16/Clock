@@ -1,6 +1,6 @@
 class Clock {
   constructor() {
-    const clockElementsIds = {
+    this.clockElementsIds = {
       hoursId: "hours",
       minutesId: "minutes",
       secondsId: "seconds",
@@ -10,34 +10,96 @@ class Clock {
       clockDigitalMinutes: "digital-minutes",
       clockDigitalSeconds: "digital-seconds",
       switcher: "switch",
+      wrapper: "wrapper",
     };
-
-    this.isDigitalClockVisible = false;
-
     this.currentHours = null;
     this.currentMinutes = null;
     this.currentSeconds = null;
-    this.hoursHand = document.getElementById(clockElementsIds.hoursId);
-    this.minutesHand = document.getElementById(clockElementsIds.minutesId);
-    this.secondsHand = document.getElementById(clockElementsIds.secondsId);
-    this.clock = document.getElementById(clockElementsIds.clock);
-    this.clockDigital = document.getElementById(clockElementsIds.clockDigital);
-    this.clockDigitalHours = document.getElementById(
-      clockElementsIds.clockDigitalHours
-    );
-    this.clockDigitalMinutes = document.getElementById(
-      clockElementsIds.clockDigitalMinutes
-    );
-    this.clockDigitalSeconds = document.getElementById(
-      clockElementsIds.clockDigitalSeconds
-    );
-    this.switcher = document.getElementById(clockElementsIds.switcher);
+    this.hoursHand = null;
+    this.minutesHand = null;
+    this.secondsHand = null;
+    this.clock = null;
+    this.clockDigital = null;
+    this.clockDigitalHours = null;
+    this.clockDigitalMinutes = null;
+    this.clockDigitalSeconds = null;
+    this.switcher = null;
+    this.wrapperBlock = null;
+
+    this.isDigitalClockVisible = false;
+    this.isMoving = false;
+
+    this.grabElements();
+
+    this.windowProperty = {
+      cursorPosX: 0,
+      cursorPosY: 0,
+      isDraggable: false,
+      left: 0,
+      top: 0,
+      transformOffset: 0,
+    };
+
     this.switcher.textContent = "Switch to digital clock".toUpperCase();
     this.switcher.addEventListener("click", () => this.switchClock());
-
     this.getActualTime();
     this.initializeClock();
     this.startTime();
+
+    this.movableBlock.addEventListener("mousedown", (event) => {
+      this.isMoving = !this.isMoving;
+      const { top, left, width } = this.movableBlock.getBoundingClientRect();
+      this.windowProperty = {
+        cursorPosX: event.clientX,
+        cursorPosY: event.clientY,
+        top,
+        left,
+        transformOffset: width / 2,
+      };
+    });
+
+    this.movableBlock.addEventListener("mousemove", (e) => {
+      if (!this.isMoving) {
+        return;
+      }
+      this.movableBlock.style.left = `${
+        e.clientX -
+        this.windowProperty.cursorPosX +
+        this.windowProperty.left +
+        this.windowProperty.transformOffset
+      }px`;
+      this.movableBlock.style.top = `${
+        e.clientY -
+        this.windowProperty.cursorPosY +
+        this.windowProperty.top +
+        this.windowProperty.transformOffset
+      }px`;
+    });
+
+    this.movableBlock.addEventListener("mouseup", () => {
+      this.isMoving = !this.isMoving;
+    });
+  }
+
+  grabElements() {
+    this.movableBlock = document.getElementById(this.clockElementsIds.wrapper);
+    this.hoursHand = document.getElementById(this.clockElementsIds.hoursId);
+    this.minutesHand = document.getElementById(this.clockElementsIds.minutesId);
+    this.secondsHand = document.getElementById(this.clockElementsIds.secondsId);
+    this.clock = document.getElementById(this.clockElementsIds.clock);
+    this.clockDigital = document.getElementById(
+      this.clockElementsIds.clockDigital
+    );
+    this.clockDigitalHours = document.getElementById(
+      this.clockElementsIds.clockDigitalHours
+    );
+    this.clockDigitalMinutes = document.getElementById(
+      this.clockElementsIds.clockDigitalMinutes
+    );
+    this.clockDigitalSeconds = document.getElementById(
+      this.clockElementsIds.clockDigitalSeconds
+    );
+    this.switcher = document.getElementById(this.clockElementsIds.switcher);
   }
 
   switchClock() {
