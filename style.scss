@@ -1,5 +1,13 @@
-$main-theme: #4b4545;
-$font-color: gray;
+$main-theme: #0a0a0a;
+$font-color: #3cbdae;
+
+@mixin neon-light-font {
+  color: $font-color;
+  background-color: $main-theme;
+  text-shadow: 1px 1px 2px rgba(77, 138, 133, 1),
+    0px 0px 25px rgba(100, 255, 97, 1), -15px -9px 25px rgba(79, 170, 255, 1),
+    15px 9px 20px rgba(79, 170, 255, 1);
+}
 
 *,
 *::after,
@@ -15,7 +23,6 @@ body {
   height: 100vh;
   overflow: hidden;
   font-family: inherit;
-  color: $font-color;
 }
 
 .wrapper {
@@ -41,6 +48,7 @@ body {
 
     .container-title {
       font-size: 30px;
+      @include neon-light-font;
     }
 
     .clock-wrapper {
@@ -59,7 +67,7 @@ body {
         transition: opacity 1s;
         font-size: 45px;
         font-weight: bold;
-        -webkit-box-reflect: below 0 linear-gradient(transparent, blue);
+        @include neon-light-font;
 
         &--active {
           top: 50%;
@@ -72,11 +80,12 @@ body {
         margin: 30px;
         width: 400px;
         height: 400px;
-        background-color: #fff;
         border-radius: 50%;
         position: relative;
         transition: opacity 0.5s ease-in-out;
         animation: showClock 0.5s ease-in-out 1;
+        @include neon-light-font;
+        border: 8px solid $font-color;
 
         &--hidden {
           opacity: 0;
@@ -89,28 +98,26 @@ body {
           top: 50%;
           left: 50%;
           transform-origin: top;
-          border-radius: 50%;
-          border: 1px solid black;
+          border-radius: 90%;
+          border: 5px solid $font-color;
+          background-color: #12ebb460;
         }
 
         &__hours-hand {
           width: 10px;
-          height: 100px;
-          background-color: red;
+          height: 90px;
           transform: rotate(180deg);
         }
 
         &__minutes-hand {
           width: 7px;
           height: 135px;
-          background-color: green;
           transform: rotate(180deg);
         }
 
         &__seconds-hand {
           width: 3px;
           height: 140px;
-          background-color: blue;
           transform: rotate(180deg);
         }
 
@@ -189,8 +196,10 @@ body {
       margin: 30px 0;
 
       &__button {
-        padding: 8px 18px;
+        padding: 5px 25px;
         cursor: pointer;
+        @include neon-light-font;
+        font-size: 20px;
       }
     }
   }
