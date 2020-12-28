@@ -30,7 +30,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid #000;
+  border: 2px solid rgb(32, 205, 221);
   width: 30%;
   display: flex;
   justify-content: center;
@@ -86,6 +86,7 @@ body {
         animation: showClock 0.5s ease-in-out 1;
         @include neon-light-font;
         border: 8px solid $font-color;
+        box-shadow: -23px 23px 46px #148a84, 23px -23px 46px #125869;
 
         &--hidden {
           opacity: 0;
@@ -194,12 +195,14 @@ body {
 
     .switcher {
       margin: 30px 0;
+      box-shadow: -3px 3px 20px #148a84, 3px -3px 46px #125869;
 
       &__button {
         padding: 5px 25px;
         cursor: pointer;
         @include neon-light-font;
         font-size: 20px;
+        border: none;
       }
     }
   }

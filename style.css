@@ -8,12 +8,11 @@
 }
 
 body {
-  background-color: #4b4545;
+  background-color: #0a0a0a;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   font-family: inherit;
-  color: gray;
 }
 
 .wrapper {
@@ -22,7 +21,7 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  border: 2px solid #000;
+  border: 2px solid #20cddd;
   width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,6 +54,9 @@ body {
 
 .wrapper .container .container-title {
   font-size: 30px;
+  color: #3cbdae;
+  background-color: #0a0a0a;
+  text-shadow: 1px 1px 2px #4d8a85, 0px 0px 25px #64ff61, -15px -9px 25px #4faaff, 15px 9px 20px #4faaff;
 }
 
 .wrapper .container .clock-wrapper {
@@ -78,6 +80,11 @@ body {
   opacity: 0;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
+  font-size: 45px;
+  font-weight: bold;
+  color: #3cbdae;
+  background-color: #0a0a0a;
+  text-shadow: 1px 1px 2px #4d8a85, 0px 0px 25px #64ff61, -15px -9px 25px #4faaff, 15px 9px 20px #4faaff;
 }
 
 .wrapper .container .clock-wrapper .clock-digital--active {
@@ -90,13 +97,18 @@ body {
   margin: 30px;
   width: 400px;
   height: 400px;
-  background-color: #fff;
   border-radius: 50%;
   position: relative;
   -webkit-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
   -webkit-animation: showClock 0.5s ease-in-out 1;
           animation: showClock 0.5s ease-in-out 1;
+  color: #3cbdae;
+  background-color: #0a0a0a;
+  text-shadow: 1px 1px 2px #4d8a85, 0px 0px 25px #64ff61, -15px -9px 25px #4faaff, 15px 9px 20px #4faaff;
+  border: 8px solid #3cbdae;
+  -webkit-box-shadow: -23px 23px 46px #148a84, 23px -23px 46px #125869;
+          box-shadow: -23px 23px 46px #148a84, 23px -23px 46px #125869;
 }
 
 .wrapper .container .clock-wrapper .clock--hidden {
@@ -112,14 +124,14 @@ body {
   left: 50%;
   -webkit-transform-origin: top;
           transform-origin: top;
-  border-radius: 50%;
-  border: 1px solid black;
+  border-radius: 90%;
+  border: 5px solid #3cbdae;
+  background-color: #12ebb460;
 }
 
 .wrapper .container .clock-wrapper .clock__hours-hand {
   width: 10px;
-  height: 100px;
-  background-color: red;
+  height: 90px;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -127,7 +139,6 @@ body {
 .wrapper .container .clock-wrapper .clock__minutes-hand {
   width: 7px;
   height: 135px;
-  background-color: green;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -135,7 +146,6 @@ body {
 .wrapper .container .clock-wrapper .clock__seconds-hand {
   width: 3px;
   height: 140px;
-  background-color: blue;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -215,11 +225,18 @@ body {
 
 .wrapper .container .switcher {
   margin: 30px 0;
+  -webkit-box-shadow: -3px 3px 20px #148a84, 3px -3px 46px #125869;
+          box-shadow: -3px 3px 20px #148a84, 3px -3px 46px #125869;
 }
 
 .wrapper .container .switcher__button {
-  padding: 8px 18px;
+  padding: 5px 25px;
   cursor: pointer;
+  color: #3cbdae;
+  background-color: #0a0a0a;
+  text-shadow: 1px 1px 2px #4d8a85, 0px 0px 25px #64ff61, -15px -9px 25px #4faaff, 15px 9px 20px #4faaff;
+  font-size: 20px;
+  border: none;
 }
 
 @-webkit-keyframes hideClock {
