@@ -54,14 +54,14 @@ body {
 }
 
 .wrapper .container .container-title {
+  color: #aee2db;
+  background-color: #0a0a0a;
+  text-shadow: 1px 1px 2px #4d8a85, 0px 0px 25px #64ff61, -15px -9px 25px #4faaff, 15px 9px 20px #4faaff;
   font-size: 30px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  color: #3cbdae;
-  background-color: #0a0a0a;
-  text-shadow: 1px 1px 2px #4d8a85, 0px 0px 25px #64ff61, -15px -9px 25px #4faaff, 15px 9px 20px #4faaff;
 }
 
 .wrapper .container .clock-wrapper {
@@ -77,6 +77,9 @@ body {
 }
 
 .wrapper .container .clock-wrapper .clock-digital {
+  color: #aee2db;
+  background-color: #0a0a0a;
+  text-shadow: 1px 1px 2px #4d8a85, 0px 0px 25px #64ff61, -15px -9px 25px #4faaff, 15px 9px 20px #4faaff;
   position: absolute;
   top: -100%;
   left: 50%;
@@ -87,9 +90,6 @@ body {
   transition: opacity 1s;
   font-size: 45px;
   font-weight: bold;
-  color: #3cbdae;
-  background-color: #0a0a0a;
-  text-shadow: 1px 1px 2px #4d8a85, 0px 0px 25px #64ff61, -15px -9px 25px #4faaff, 15px 9px 20px #4faaff;
 }
 
 .wrapper .container .clock-wrapper .clock-digital--active {
@@ -99,6 +99,9 @@ body {
 }
 
 .wrapper .container .clock-wrapper .clock {
+  color: #aee2db;
+  background-color: #0a0a0a;
+  text-shadow: 1px 1px 2px #4d8a85, 0px 0px 25px #64ff61, -15px -9px 25px #4faaff, 15px 9px 20px #4faaff;
   margin: 30px;
   width: 400px;
   height: 400px;
@@ -108,10 +111,7 @@ body {
   transition: opacity 0.5s ease-in-out;
   -webkit-animation: showClock 0.5s ease-in-out 1;
           animation: showClock 0.5s ease-in-out 1;
-  color: #3cbdae;
-  background-color: #0a0a0a;
-  text-shadow: 1px 1px 2px #4d8a85, 0px 0px 25px #64ff61, -15px -9px 25px #4faaff, 15px 9px 20px #4faaff;
-  border: 8px solid #3cbdae;
+  border: 8px solid #aee2db;
   -webkit-box-shadow: -23px 23px 46px #148a84, 23px -23px 46px #125869;
           box-shadow: -23px 23px 46px #148a84, 23px -23px 46px #125869;
 }
@@ -130,7 +130,7 @@ body {
   -webkit-transform-origin: top;
           transform-origin: top;
   border-radius: 90%;
-  border: 5px solid #3cbdae;
+  border: 5px solid #aee2db;
   background-color: #12ebb460;
 }
 
@@ -229,25 +229,28 @@ body {
 }
 
 .wrapper .container .switcher {
-  margin: 30px 0;
+  margin: 20px 0;
   -webkit-box-shadow: -3px 3px 20px #148a84, 3px -3px 46px #125869;
           box-shadow: -3px 3px 20px #148a84, 3px -3px 46px #125869;
   width: 70%;
 }
 
 .wrapper .container .switcher__button {
-  padding: 5px 25px;
-  cursor: pointer;
-  color: #3cbdae;
+  color: #aee2db;
   background-color: #0a0a0a;
   text-shadow: 1px 1px 2px #4d8a85, 0px 0px 25px #64ff61, -15px -9px 25px #4faaff, 15px 9px 20px #4faaff;
+  padding: 10px 25px;
+  cursor: pointer;
   font-size: 20px;
+  text-transform: uppercase;
   border: none;
   width: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .wrapper .container .switcher__button:hover {
-  background-color: #3cbdae;
+  background-color: #aee2db;
   color: #0a0a0a;
 }
 

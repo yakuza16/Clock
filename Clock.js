@@ -1,50 +1,43 @@
+const MAX_SECONDS = 60;
+const MAX_MINUTES = 60;
+const MAX_WALL_CLOCK_HOURS = 60;
+const CLOCK_ELEMENTS_ID = {
+  hoursId: "hours",
+  minutesId: "minutes",
+  secondsId: "seconds",
+  clock: "clock",
+  clockDigital: "clock-digital",
+  clockDigitalHours: "digital-hours",
+  clockDigitalMinutes: "digital-minutes",
+  clockDigitalSeconds: "digital-seconds",
+  switcher: "switch",
+  wrapper: "wrapper",
+};
+
 class Clock {
   constructor() {
-    this.clockElementsIds = {
-      hoursId: "hours",
-      minutesId: "minutes",
-      secondsId: "seconds",
-      clock: "clock",
-      clockDigital: "clock-digital",
-      clockDigitalHours: "digital-hours",
-      clockDigitalMinutes: "digital-minutes",
-      clockDigitalSeconds: "digital-seconds",
-      switcher: "switch",
-      wrapper: "wrapper",
-    };
     this.currentHours = null;
     this.currentMinutes = null;
     this.currentSeconds = null;
-    this.hoursHand = null;
-    this.minutesHand = null;
-    this.secondsHand = null;
-    this.clock = null;
-    this.clockDigital = null;
-    this.clockDigitalHours = null;
-    this.clockDigitalMinutes = null;
-    this.clockDigitalSeconds = null;
-    this.switcher = null;
-    this.wrapperBlock = null;
-
     this.isDigitalClockVisible = false;
     this.isMoving = false;
-
-    this.grabElements();
-
     this.windowProperty = {
       cursorPosX: 0,
       cursorPosY: 0,
-      isDraggable: false,
       left: 0,
       top: 0,
-      transformOffset: 0,
+      transformOffsetX: 0,
+      transformOffsetY: 0,
     };
-
-    this.switcher.textContent = "Switch to digital clock".toUpperCase();
-    this.switcher.addEventListener("click", () => this.switchClock());
+    this.grabElements();
     this.getActualTime();
     this.initializeClock();
     this.startTime();
+    this.addListeners();
+  }
+
+  addListeners() {
+    this.switcher.addEventListener("click", () => this.switchClock());
 
     this.movableBlock.addEventListener("mousedown", (event) => {
       this.isMoving = !this.isMoving;
@@ -83,29 +76,30 @@ class Clock {
     });
 
     this.movableBlock.addEventListener("mouseup", () => {
-      this.isMoving = !this.isMoving;
+      this.isMoving = false;
+    });
+    this.movableBlock.addEventListener("mouseleave", () => {
+      this.isMoving = false;
     });
   }
 
   grabElements() {
-    this.movableBlock = document.getElementById(this.clockElementsIds.wrapper);
-    this.hoursHand = document.getElementById(this.clockElementsIds.hoursId);
-    this.minutesHand = document.getElementById(this.clockElementsIds.minutesId);
-    this.secondsHand = document.getElementById(this.clockElementsIds.secondsId);
-    this.clock = document.getElementById(this.clockElementsIds.clock);
-    this.clockDigital = document.getElementById(
-      this.clockElementsIds.clockDigital
-    );
+    this.movableBlock = document.getElementById(CLOCK_ELEMENTS_ID.wrapper);
+    this.hoursHand = document.getElementById(CLOCK_ELEMENTS_ID.hoursId);
+    this.minutesHand = document.getElementById(CLOCK_ELEMENTS_ID.minutesId);
+    this.secondsHand = document.getElementById(CLOCK_ELEMENTS_ID.secondsId);
+    this.clock = document.getElementById(CLOCK_ELEMENTS_ID.clock);
+    this.clockDigital = document.getElementById(CLOCK_ELEMENTS_ID.clockDigital);
     this.clockDigitalHours = document.getElementById(
-      this.clockElementsIds.clockDigitalHours
+      CLOCK_ELEMENTS_ID.clockDigitalHours
     );
     this.clockDigitalMinutes = document.getElementById(
-      this.clockElementsIds.clockDigitalMinutes
+      CLOCK_ELEMENTS_ID.clockDigitalMinutes
     );
     this.clockDigitalSeconds = document.getElementById(
-      this.clockElementsIds.clockDigitalSeconds
+      CLOCK_ELEMENTS_ID.clockDigitalSeconds
     );
-    this.switcher = document.getElementById(this.clockElementsIds.switcher);
+    this.switcher = document.getElementById(CLOCK_ELEMENTS_ID.switcher);
   }
 
   switchClock() {
@@ -132,11 +126,9 @@ class Clock {
     this.secondsHand.style.transform = `rotate(calc(180deg + ${
       this.currentSeconds * 6
     }deg ))`;
-
     this.minutesHand.style.transform = `rotate(calc(180deg + ${
       this.currentMinutes * 6
     }deg ))`;
-
     this.hoursHand.style.transform = `rotate(calc(180deg + ${
       this.currentHours * 30 + this.currentMinutes / 2
     }deg ))`;
@@ -159,19 +151,19 @@ class Clock {
 
   startTime() {
     setInterval(() => {
-      if (this.currentSeconds === 60) {
+      if (this.currentSeconds === MAX_SECONDS) {
         this.currentSeconds = 0;
         this.currentMinutes++;
         this.minutesHand.style.transform = `rotate(calc(180deg + ${
           this.currentMinutes * 6
         }deg ))`;
-        if (this.currentMinutes === 60) {
+        if (this.currentMinutes === MAX_MINUTES) {
           this.currentMinutes = 0;
           this.currentHours++;
           this.hoursHand.style.transform = `rotate(calc(180deg + ${
             this.currentHours * 30 + this.currentMinutes / 2
           }deg ))`;
-          if (this.currentHours === 12) {
+          if (this.currentHours === MAX_WALL_CLOCK_HOURS) {
             this.currentHours = 0;
             this.hoursHand.style.transform = `rotate(calc(180deg + ${
               this.currentHours * 30 + this.currentMinutes / 2
