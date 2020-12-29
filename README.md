@@ -1,4 +1,4 @@
-# [Clock](https://yakuza16.github.io/clock/ "Clock")
+# [Clock](https://yakuza16.github.io/Clock/ "Clock")
 
 ![](https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/clock-256.png)
 
