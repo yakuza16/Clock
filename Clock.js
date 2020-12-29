@@ -48,13 +48,19 @@ class Clock {
 
     this.movableBlock.addEventListener("mousedown", (event) => {
       this.isMoving = !this.isMoving;
-      const { top, left, width } = this.movableBlock.getBoundingClientRect();
+      const {
+        top,
+        left,
+        width,
+        height,
+      } = this.movableBlock.getBoundingClientRect();
       this.windowProperty = {
         cursorPosX: event.clientX,
         cursorPosY: event.clientY,
-        top,
         left,
-        transformOffset: width / 2,
+        top,
+        transformOffsetX: width / 2,
+        transformOffsetY: height / 2,
       };
     });
 
@@ -66,13 +72,13 @@ class Clock {
         e.clientX -
         this.windowProperty.cursorPosX +
         this.windowProperty.left +
-        this.windowProperty.transformOffset
+        this.windowProperty.transformOffsetX
       }px`;
       this.movableBlock.style.top = `${
         e.clientY -
         this.windowProperty.cursorPosY +
         this.windowProperty.top +
-        this.windowProperty.transformOffset
+        this.windowProperty.transformOffsetY
       }px`;
     });
 
